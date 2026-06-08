@@ -7,10 +7,12 @@ macOS screen saver for the band **Angine de Poitrine** — a Quebec math-rock du
 ```
 AngineDeSaveScreen.xcodeproj/   Xcode project (Swift, macOS Screen Saver bundle)
 AngineScreenSaver/
-  AngineScreenSaverView.swift   Main ScreenSaverView — animation loop, drawing
-  Figure.swift                  Dot struct
-  GoldTriangle.swift            The bouncing gold triangle
-  Info.plist                    Bundle metadata (NSPrincipalClass = AngineScreenSaverView)
+  AngineScreenSaverView.swift       Main ScreenSaverView — animation loop, drawing, Options wiring
+  Figure.swift                      Dot struct
+  GoldTriangle.swift                Bouncing center element (pyramid or band image)
+  ConfigureSheetController.swift    Options sheet — radio buttons to pick center mode
+  hands.png                         Band artwork image (used in Band Artwork mode)
+  Info.plist                        Bundle metadata (NSPrincipalClass = AngineScreenSaverView)
 ```
 
 ## What it does
@@ -18,6 +20,7 @@ AngineScreenSaver/
 - **Background**: screen split vertically — white left half, black right half
 - **Dots**: black and white polka dots of varied sizes accumulate one per side every ~0.3 seconds, stacking on each other indefinitely (up to a 4,000-dot cap). White dots have a black outline; black dots have a white outline.
 - **Gold triangle**: bounces around the screen DVD-screensaver style, always drawn on top of dots. Starts at a random diagonal angle and reflects off all four edges — never rotates, always tip-up.
+- **Options sheet**: click the Options button in System Settings → Screen Saver to choose the bouncing center element — **Gold Pyramid** (default) or **Band Artwork** (scales `hands.png` so the triangle in the image matches the drawn pyramid height). Preference is stored via `ScreenSaverDefaults`.
 
 ## Build & install
 
@@ -49,3 +52,4 @@ Then open **System Settings → Screen Saver** and select **AngineScreenSaver**.
 | `hardCap` | AngineScreenSaverView | Max total dots before spawning stops |
 | `speed` | GoldTriangle | Triangle px/frame (currently 1.5) |
 | `baseSize` | GoldTriangle | Triangle size and bounce margin |
+| `triangleFrac` | GoldTriangle | Fraction of image height the triangle occupies (~0.33); adjust if image changes |

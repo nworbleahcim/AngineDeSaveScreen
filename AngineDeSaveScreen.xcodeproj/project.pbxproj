@@ -11,6 +11,8 @@
 		AABBCC000000000000000021 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBCC000000000000000011 /* Figure.swift */; };
 		AABBCC000000000000000022 /* GoldTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBCC000000000000000012 /* GoldTriangle.swift */; };
 		AABBCC000000000000000023 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AABBCC000000000000000014 /* ScreenSaver.framework */; };
+		AABBCC000000000000000070 /* ConfigureSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBCC000000000000000072 /* ConfigureSheetController.swift */; };
+		AABBCC000000000000000071 /* hands.png in Resources */ = {isa = PBXBuildFile; fileRef = AABBCC000000000000000073 /* hands.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		AABBCC000000000000000012 /* GoldTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldTriangle.swift; sourceTree = "<group>"; };
 		AABBCC000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AABBCC000000000000000014 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
+		AABBCC000000000000000072 /* ConfigureSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSheetController.swift; sourceTree = "<group>"; };
+		AABBCC000000000000000073 /* hands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hands.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 			isa = PBXGroup;
 			children = (
 				AABBCC000000000000000010 /* AngineScreenSaverView.swift */,
+				AABBCC000000000000000072 /* ConfigureSheetController.swift */,
 				AABBCC000000000000000011 /* Figure.swift */,
 				AABBCC000000000000000012 /* GoldTriangle.swift */,
 				AABBCC000000000000000013 /* Info.plist */,
+				AABBCC000000000000000073 /* hands.png */,
 			);
 			path = AngineScreenSaver;
 			sourceTree = "<group>";
@@ -114,6 +120,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABBCC000000000000000071 /* hands.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AABBCC000000000000000020 /* AngineScreenSaverView.swift in Sources */,
+				AABBCC000000000000000070 /* ConfigureSheetController.swift in Sources */,
 				AABBCC000000000000000021 /* Figure.swift in Sources */,
 				AABBCC000000000000000022 /* GoldTriangle.swift in Sources */,
 			);
