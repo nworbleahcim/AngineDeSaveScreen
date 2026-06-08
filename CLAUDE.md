@@ -5,7 +5,7 @@ macOS screen saver for the band **Angine de Poitrine** — a Quebec math-rock du
 ## Project structure
 
 ```
-anginescreen.xcodeproj/     Xcode project (Swift, macOS Screen Saver bundle)
+AngineDeSaveScreen.xcodeproj/   Xcode project (Swift, macOS Screen Saver bundle)
 AngineScreenSaver/
   AngineScreenSaverView.swift   Main ScreenSaverView — animation loop, drawing
   Figure.swift                  Dot struct
@@ -23,10 +23,10 @@ AngineScreenSaver/
 
 ```bash
 # Build
-xcodebuild -project anginescreen.xcodeproj -scheme AngineScreenSaver -configuration Debug build
+xcodebuild -project AngineDeSaveScreen.xcodeproj -scheme AngineDeSaveScreen -configuration Debug build
 
 # Install (open prompts macOS to install the .saver bundle)
-open ~/Library/Developer/Xcode/DerivedData/anginescreen-*/Build/Products/Debug/AngineScreenSaver.saver
+open ~/Library/Developer/Xcode/DerivedData/AngineDeSaveScreen-*/Build/Products/Debug/AngineDeSaveScreen.saver
 
 # Force reload after reinstall
 killall ScreenSaverEngine; killall legacyScreenSaver

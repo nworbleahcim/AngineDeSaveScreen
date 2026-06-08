@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AABBCC000000000000000005 /* AngineScreenSaver.saver */ = {isa = PBXFileReference; explicitFileType = "wrapper.cfbundle"; includeInIndex = 0; path = AngineScreenSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		AABBCC000000000000000005 /* AngineDeSaveScreen.saver */ = {isa = PBXFileReference; explicitFileType = "wrapper.cfbundle"; includeInIndex = 0; path = AngineDeSaveScreen.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABBCC000000000000000010 /* AngineScreenSaverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngineScreenSaverView.swift; sourceTree = "<group>"; };
 		AABBCC000000000000000011 /* Figure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
 		AABBCC000000000000000012 /* GoldTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldTriangle.swift; sourceTree = "<group>"; };
@@ -76,9 +76,9 @@
 			);
 			dependencies = (
 			);
-			name = AngineScreenSaver;
-			productName = AngineScreenSaver;
-			productReference = AABBCC000000000000000005 /* AngineScreenSaver.saver */;
+			name = AngineDeSaveScreen;
+			productName = AngineDeSaveScreen;
+			productReference = AABBCC000000000000000005 /* AngineDeSaveScreen.saver */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -91,7 +91,7 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 			};
-			buildConfigurationList = AABBCC000000000000000050 /* Build configuration list for PBXProject "anginescreen" */;
+			buildConfigurationList = AABBCC000000000000000050 /* Build configuration list for PBXProject "AngineDeSaveScreen" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -188,8 +188,8 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anginescreen.saver";
-				PRODUCT_NAME = AngineScreenSaver;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anginedesavescreen.saver";
+				PRODUCT_NAME = AngineDeSaveScreen;
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
@@ -207,8 +207,8 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anginescreen.saver";
-				PRODUCT_NAME = AngineScreenSaver;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anginedesavescreen.saver";
+				PRODUCT_NAME = AngineDeSaveScreen;
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
@@ -217,7 +217,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AABBCC000000000000000050 /* Build configuration list for PBXProject "anginescreen" */ = {
+		AABBCC000000000000000050 /* Build configuration list for PBXProject "AngineDeSaveScreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AABBCC000000000000000040 /* Debug */,
