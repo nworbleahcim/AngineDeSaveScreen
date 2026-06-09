@@ -1,5 +1,4 @@
 import Cocoa
-import Foundation
 
 enum CenterMode: Int {
     case pyramid  = 0
@@ -19,23 +18,24 @@ class GoldTriangle {
     private static let gold     = CGColor(red: 1.00, green: 0.84, blue: 0.00, alpha: 1.0)
     private static let darkGold = CGColor(red: 0.72, green: 0.53, blue: 0.04, alpha: 1.0)
 
-    // Loaded once from the bundle
-    private lazy var bandImage: NSImage? = {
+    // Loaded once from the bundle, decoded straight to CGImage for direct blit
+    private lazy var bandCGImage: CGImage? = {
         Bundle(for: GoldTriangle.self)
             .url(forResource: "hands", withExtension: "png")
-            .flatMap { NSImage(contentsOf: $0) }
+            .flatMap { CGDataProvider(url: $0 as CFURL) }
+            .flatMap { CGImage(pngDataProviderSource: $0, decode: nil, shouldInterpolate: true, intent: .defaultIntent) }
     }()
 
-    // Scale the image so the gold triangle inside it matches the drawn pyramid height (1.5 × baseSize)
-    private var scaledImageSize: CGSize {
-        guard let img = bandImage else {
+    // Computed once and cached — result is constant for the lifetime of the saver
+    private lazy var scaledImageSize: CGSize = {
+        guard let img = bandCGImage else {
             return CGSize(width: baseSize * 2, height: baseSize * 2)
         }
         let targetHeight: CGFloat = baseSize * 1.5        // 108 pt — same as drawn pyramid tip-to-base
         let triangleFrac: CGFloat = 0.33                  // triangle occupies ~33% of image height
-        let scale = targetHeight / (img.size.height * triangleFrac)
-        return CGSize(width: img.size.width * scale, height: img.size.height * scale)
-    }
+        let scale = targetHeight / (CGFloat(img.height) * triangleFrac)
+        return CGSize(width: CGFloat(img.width) * scale, height: CGFloat(img.height) * scale)
+    }()
 
     private var xMargin: CGFloat {
         mode == .bandImage ? scaledImageSize.width  / 2 : baseSize
@@ -99,16 +99,12 @@ class GoldTriangle {
     }
 
     private func drawBandImage(in ctx: CGContext) {
-        guard let image = bandImage else { drawPyramid(in: ctx); return }
+        guard let image = bandCGImage else { drawPyramid(in: ctx); return }
 
         let sz   = scaledImageSize
-        let rect = NSRect(x: position.x - sz.width  / 2,
+        let rect = CGRect(x: position.x - sz.width  / 2,
                           y: position.y - sz.height / 2,
                           width: sz.width, height: sz.height)
-
-        NSGraphicsContext.saveGraphicsState()
-        NSGraphicsContext.current = NSGraphicsContext(cgContext: ctx, flipped: false)
-        image.draw(in: rect)
-        NSGraphicsContext.restoreGraphicsState()
+        ctx.draw(image, in: rect)
     }
 }

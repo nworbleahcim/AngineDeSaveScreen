@@ -28,7 +28,7 @@ class AngineScreenSaverView: ScreenSaverView {
     }
 
     private func setup() {
-        animationTimeInterval = 1.0 / 60.0
+        animationTimeInterval = isPreview ? 1.0 / 30.0 : 1.0 / 60.0
         saverDefaults = ScreenSaverDefaults(forModuleWithName: "com.anginedesavescreen.saver")
         sheetController = ConfigureSheetController(defaults: saverDefaults)
         triangle = GoldTriangle(bounds: bounds)
