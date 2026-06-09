@@ -5,8 +5,8 @@ A macOS screen saver inspired by the band [Angine de Poitrine](https://en.wikipe
 ## What it looks like
 
 - Screen split vertically: white left half, black right half
-- Black and white polka dots of varied sizes accumulate one by one on both sides, stacking on each other over time
-- A gold triangle bounces around the screen DVD-screensaver style, always floating on top of the dots
+- Black and white polka dots of varied sizes accumulate one by one on both sides, stacking on each other over time. Once 4,000 dots fill the canvas (~22 minutes), it wipes clean and the cycle begins again
+- A gold triangle bounces around the screen DVD-screensaver style, always floating on top of the dots throughout every cycle
 
 ## Requirements
 
