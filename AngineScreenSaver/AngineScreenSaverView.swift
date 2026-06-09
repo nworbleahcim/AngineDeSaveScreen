@@ -44,7 +44,12 @@ class AngineScreenSaverView: ScreenSaverView {
 
         triangle.update()
 
-        if totalSpawned < hardCap, frameCounter % spawnInterval == 0 {
+        if totalSpawned >= hardCap {
+            dotLayer = nil
+            pendingDots.removeAll()
+            totalSpawned = 0
+            frameCounter = 0
+        } else if frameCounter % spawnInterval == 0 {
             pendingDots.append(makeDot(onLeftSide: true))
             pendingDots.append(makeDot(onLeftSide: false))
             totalSpawned += 2
